@@ -28,9 +28,11 @@
         <?php
         $firstName = "Finn";
         $secondName = "OBrien";
+        $age = "19";
+        $city = "Dublin";
        
 
-        echo "My name is $firstName $secondName";
+        echo "My name is $firstName $secondName, I am $age years old and i live in $city";
         ?>
     </div>
 
@@ -48,6 +50,16 @@
     <div class="output">
         <?php
         // TODO: Write your solution here
+        $Product1 = 1;
+        $Product2 = 2;
+        $Product3 = 3;
+
+        $Quantity1 = 1;
+        $Quantity2 = 2;
+        $Quantity3 = 3;
+
+        $FinalPrice = ($Product1*$Quantity1)+($Product2*$Quantity2)+($Product3*$Quantity3);
+        echo $FinalPrice;
         ?>
     </div>
 
@@ -63,6 +75,13 @@
     <div class="output">
         <?php
         // TODO: Write your solution here
+        $isStudent = true;
+        $hasDiscount = true;
+        $isPremiumMember = false;
+
+        echo "is student" . ($isStudent ? "Yes" : "No") . "<br>";
+        echo "has discount" . ($hasDiscount ? "Yes" : "No") . "<br>";
+        echo "is premium member" . ($isPremiumMember ? "Yes" : "No");
         ?>
     </div>
 

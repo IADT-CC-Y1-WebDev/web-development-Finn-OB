@@ -27,6 +27,25 @@
     <div class="output">
         <?php
         // TODO: Write your solution here
+        $age = rand(0, 100);
+        echo "you are $age years old" . "<br>";
+
+        if ($age <= 12 ){
+            echo "you are a child";
+        }
+
+        elseif ($age <= 19){
+            echo "you are a teenager";
+        }
+
+        elseif ($age <=64){
+            echo "you are an adult";
+        }
+
+        elseif ($age > 64){
+            echo "tou are a senior";
+        }
+
         ?>
     </div>
 
@@ -43,6 +62,27 @@
     <div class="output">
         <?php
         // TODO: Write your solution here
+        $day = rand (1,7);
+
+        $days = [
+            1=> "Mon",
+            2=> "Tues",
+            3=> "Weds",
+            4=> "Thurs",
+            5=> "Fri",
+            6=> "Sat",
+            7=> "Sun",
+        ];
+        echo "today is $days[$day] " . "<br>";
+        switch(true){
+            case($day <= 5):
+            echo $days[$day] . "- weekday";
+            break;
+            case($day<=7):
+            echo  $days[$day] ."- weekend";
+            break;
+        }
+        
         ?>
     </div>
 
@@ -58,6 +98,13 @@
     <div class="output">
         <?php
         // TODO: Write your solution here
+        $number = rand (1,10);
+
+        for($i =1; $i <= 10; $i++){
+            $result = $number * $i;
+            echo"$number x $i = $result<br>";
+        }
+
         ?>
     </div>
 
@@ -73,6 +120,14 @@
     <div class="output">
         <?php
         // TODO: Write your solution here
+        $seconds = (10 - 0);
+            echo " t-minus $seconds seconds. ";
+            while ($seconds > 0) {
+            echo " $seconds left till take off ";
+        $seconds = $seconds - 1;
+           
+         }
+         echo " BLAST OFF!! ";
         ?>
     </div>
 
