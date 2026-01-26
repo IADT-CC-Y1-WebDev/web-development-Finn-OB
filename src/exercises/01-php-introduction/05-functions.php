@@ -48,6 +48,7 @@
     <div class="output">
         <?php
         // TODO: Write your solution here
+        function calculateRectangleArea($area)
         ?>
     </div>
 
