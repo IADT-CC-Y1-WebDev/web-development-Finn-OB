@@ -55,7 +55,7 @@ else{
 }
 $now = date('Y-m-d H:i:s');
 $expiry = time() + 60 * 60 *24 * 30;
-setcookie('last_visit' $now, $expiry, "/")
+setcookie('last_visit' ,$now, $expiry, "/")
 // =============================================================================
 ?>
 <!DOCTYPE html>
@@ -167,12 +167,12 @@ setcookie('last_visit' $now, $expiry, "/")
         // Example output: "Your last visit was: 2024-01-15 10:30:45"
         // ---------------------------------------------------------------------
         // TODO Exercise 4: Write your solution here
-        if ($lastvisit !== null) {
+        if ($lastVisit !== null) {
             echo "Your last visit was $lastVisit";
         }
-        else(
-            "this is your last visit";
-        )
+        else{
+          echo  "this is your last visit";
+        }
         // =====================================================================
         ?>
     </div>
