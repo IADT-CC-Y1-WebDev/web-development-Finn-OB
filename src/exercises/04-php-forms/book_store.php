@@ -32,7 +32,7 @@ try {
     // See: /examples/04-php-forms/step-01-form-submission/
     // =========================================================================
     // TODO: First, just dump the posted data to see what's submitted
-    dd($_POST);
+    // dd($_POST);
 
     // =========================================================================
     // STEP 2: Check Request Method
