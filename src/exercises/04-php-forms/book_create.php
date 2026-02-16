@@ -53,6 +53,8 @@ $formats = [
     <title>Add New Book - Exercise</title>
 </head>
 <body>
+    <?php require 'inc/flash_message.php'; ?>
+
     <div class="back-link">
         <a href="index.php">&larr; Back to Form Handling </a>
     </div>
@@ -75,7 +77,7 @@ $formats = [
     <!-- See: /examples/04-php-forms/step-09-file-uploads/                   -->
     <!-- =================================================================== -->
     <!-- TODO: Add enctype="multipart/form-data" to enable file uploads      -->
-    <form action="book_store.php" method="POST">
+    <form action="book_store.php" method="POST" enctype="multipart/form-data">
 
         <!-- =============================================================== -->
         <!-- Book Title Field                                                -->
@@ -88,7 +90,7 @@ $formats = [
                  ===========================================================
                  TODO: Repopulate title field
             -->
-            <input type="text" id="title" name="title" value="">
+            <input type="text" id="title" name="title" value="<?= old('title') ?>">
 
             <!-- ===========================================================
                  STEP 5: Display Errors
@@ -96,6 +98,9 @@ $formats = [
                  ===========================================================
                  TODO: Display error message if title validation fails
             -->
+                 <?php if (error('title')): ?>
+                    <p class="error"><?= error('title') ?></p>
+                 <?php endif; ?>
 
         </div>
 
@@ -105,10 +110,12 @@ $formats = [
         <div class="form-group">
             <label for="author">Author:</label>
             <!-- TODO: Repopulate author field                               -->
-            <input type="text" id="author" name="author" value="">
+            <input type="text" id="author" name="author" value="<?= old('author') ?>">
 
             <!-- TODO: Display error message if author validation fails      -->
-
+                    <?php if (error('author')): ?>
+                    <p class="error"><?= error('author') ?></p>
+                 <?php endif; ?>
         </div>
 
         <!-- =============================================================== -->
@@ -126,14 +133,16 @@ $formats = [
                      TODO: Use chosen() to repopulate selected option 
                 -->
                 <?php foreach ($publishers as $pub): ?>
-                    <option value="<?= $pub['id'] ?>">
+                    <option value="<?= $pub['id'] ?>" <?= chosen('publisher_id', $pub['id']) ? "selected" : "" ?>>
                         <?= h($pub['name']) ?>
                     </option>
                 <?php endforeach; ?>
             </select>
 
             <!-- TODO: Display error message if publisher validation fails   -->
-
+                <?php if (error('publisher_id')): ?>
+                    <p class="error"><?= error('publisher_id') ?></p>
+                 <?php endif; ?>
         </div>
 
         <!-- =============================================================== -->
@@ -142,10 +151,12 @@ $formats = [
         <div class="form-group">
             <label for="year">Year:</label>
             <!-- TODO: Repopulate year field                                 -->
-            <input type="text" id="year" name="year" value="">
+            <input type="text" id="year" name="year" value="<?= old('year') ?>">
 
             <!-- TODO: Display error message if year validation fails        -->
-
+                <?php if (error('year')): ?>
+                    <p class="error"><?= error('year') ?></p>
+                 <?php endif; ?>
         </div>
 
         <!-- =============================================================== -->
@@ -154,10 +165,12 @@ $formats = [
         <div class="form-group">
             <label for="isbn">ISBN:</label>
             <!-- TODO: Repopulate ISBN field                                 -->
-            <input type="text" id="isbn" name="isbn" value="">
+            <input type="text" id="isbn" name="isbn" value="<?= old('isbn') ?>">
 
             <!-- TODO: Display error message if ISBN validation fails        -->
-
+                <?php if (error('isbn')): ?>
+                    <p class="error"><?= error('isbn') ?></p>
+                 <?php endif; ?>
         </div>
 
         <!-- =============================================================== -->
@@ -175,14 +188,20 @@ $formats = [
                 -->
                 <?php foreach ($formats as $format): ?>
                     <label class="checkbox-label">
-                        <input type="checkbox" name="format_ids[]" value="<?= $format['id'] ?>">
+                        <input type="checkbox" 
+                        name="format_ids[]" 
+                        value="<?= $format['id'] ?>"
+                        <?= chosen('format_ids', $format['id']) ? "checked" : "" ?>
+                        >
                         <?= h($format['name']) ?>
                     </label>
                 <?php endforeach; ?>
             </div>
 
             <!-- TODO: Display error message if formats validation fails     -->
-
+                <?php if (error('format_id')): ?>
+                    <p class="error"><?= error('format_id') ?></p>
+                 <?php endif; ?>
         </div>
 
         <!-- =============================================================== -->
@@ -191,10 +210,12 @@ $formats = [
         <div class="form-group">
             <label for="description">Description:</label>
             <!-- TODO: Repopulate description field                          -->
-            <textarea id="description" name="description" rows="5"></textarea>
+            <textarea id="description" name="description" rows="5"><?= old('description') ?></textarea>
 
             <!-- TODO: Display error message if description validation fails -->
-
+                <?php if (error('description')): ?>
+                    <p class="error"><?= error('description') ?></p>
+                 <?php endif; ?>
         </div>
 
         <!-- =============================================================== -->
@@ -207,7 +228,9 @@ $formats = [
             <input type="file" id="cover" name="cover" accept="image/*">
 
             <!-- TODO: Display error message if cover validation fails       -->
-
+                <?php if (error('images')): ?>
+                    <p class="error"><?= error('images') ?></p>
+                 <?php endif; ?>
         </div>
 
         <!-- =============================================================== -->

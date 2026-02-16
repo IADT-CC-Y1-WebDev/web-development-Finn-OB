@@ -37,7 +37,16 @@
         // require_once __DIR__ . '/classes/Student.php';
         require_once __DIR__ . '/classes/Student.php';
 
+<<<<<<< HEAD
         $newAcc = 
+=======
+
+        $student = new Student("1234567890", "Alice");
+
+        echo "Name: " . $student->getName() . "<br>";
+        echo "Number: " . $student->getNumber();
+       
+>>>>>>> 40f72ec51b0448a72e153cb599bd7780f29c4e0e
         ?>
     </div>
 
@@ -59,6 +68,10 @@
         <?php
         // TODO: Write your solution here
         // require_once __DIR__ . '/classes/Student.php';
+        require_once __DIR__ . '/classes/Student.php';
+
+        echo "Name: " . $student->getName() . "<br>";
+        echo "Number: " . $student->getNumber();
         ?>
     </div>
 
@@ -80,11 +93,12 @@
         <?php
         // TODO: Write your solution here
         // require_once __DIR__ . '/classes/Student.php';
-        // try {
-        //     $student = new Student("Alice", "");
-        // } catch (Exception $e) {
-        //     echo "Error: " . $e->getMessage();
-        // }
+        require_once __DIR__ . '/classes/Student.php';
+        try {
+             $student = new Student("Alice", "");
+         } catch (Exception $e) {
+            echo "Error: " . $e->getMessage();
+         }
         ?>
     </div>
 

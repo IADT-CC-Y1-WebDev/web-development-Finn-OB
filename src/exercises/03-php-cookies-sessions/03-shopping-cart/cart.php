@@ -11,7 +11,11 @@ require_once './etc/config.php';
 // Exercise 1: Start the session
 // -----------------------------------------------------------------------------
 // TODO: Write your code here
+<<<<<<< HEAD
 if (session_status() === PHP_SESSION_NONE){
+=======
+if (session_status() === PHP_SESSION_NONE) {
+>>>>>>> 40f72ec51b0448a72e153cb599bd7780f29c4e0e
     session_start();
 }
 // =============================================================================
@@ -31,6 +35,7 @@ $cart = ShoppingCart::getInstance();
 // 3. Redirect back to cart.php
 // -----------------------------------------------------------------------------
 // TODO: Write your code here
+<<<<<<< HEAD
 if (isset($_GET['remove'])){
      $id = (int)$_GET['remove'];
     $product = Product::findById($id);
@@ -39,6 +44,18 @@ if (isset($_GET['remove'])){
     }
      header("Location: cart.php");
     exit();
+=======
+if(isset($_GET['remove'])) {
+    $id = (int)$_GET['remove'];
+    $product = Product::findById($id);
+    if ($product !== null) {
+        $cart->remove($product);
+    }
+ 
+    // Redirect back to cart.php
+    header('Location: cart.php');
+    exit;
+>>>>>>> 40f72ec51b0448a72e153cb599bd7780f29c4e0e
 }
 // =============================================================================
 
@@ -49,7 +66,12 @@ if (isset($_GET['remove'])){
 // 2. Redirect back to cart.php
 // -----------------------------------------------------------------------------
 // TODO: Write your code here
+if (isset($_GET['clear'])){
+    $cart -> clear();
 
+    header('Location: cart.php');
+    exit;
+}
 // =============================================================================
 
 // =============================================================================

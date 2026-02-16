@@ -1,8 +1,8 @@
 <?php
 
 class Student {
-    public $name;
-    public $number;
+    private $name;
+    private $number;
 
     public function __construct($Name, $Number) {
         $this->name = $Name;
@@ -14,5 +14,8 @@ class Student {
     public function getNumber(){
         return $this->number;
     }
+
+    public function getName() { return $this->number; }
+    public function getNumber() { return $this->name; }
 }
 
