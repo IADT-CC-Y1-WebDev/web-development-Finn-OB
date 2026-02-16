@@ -90,6 +90,12 @@
         <?php
         // TODO: Write your solution here
         // require_once __DIR__ . '/classes/Student.php';
+        require_once __DIR__ . '/classes/Student.php';
+
+        $student = new Student("Finn", "N123456");
+
+        echo "Student " . $student->getName() . 
+            " has number " . $student->getNumber();
         ?>
     </div>
 
