@@ -48,6 +48,42 @@ catch (PDOException $e) {
             // 4. DELETE FROM books WHERE id = :id
             // 5. Check rowCount()
             // 6. Try to fetch the book again to verify deletion
+        $stmt = $db->prepare("
+        INSERT INTO books (title, author, description)
+        VALUES (:title, :author, :description)
+        ");
+
+        $stmt->execute([
+            'title'=>'temporary book',
+            'author'=>'finn obrien',
+            'description'=>'bla bla bla'
+        ]);
+
+        $newId = $db->lastInsertId();
+        echo "Created book with ID: $newId<br>";
+        
+        $stmt = $db->prepare("DELETE FROM books WHERE id = :id");
+        $stmt->execute(['id' => $newId]);
+
+        if($stmt->rowCount() > 0){
+            echo "Deleted record(s)<br>";
+        }else{
+            echo "No records found to delete";
+        }
+
+        $stmt = $db->prepare("SELECT * FROM books WHERE id = :id");
+        $stmt->execute(['id' => $newId]);
+
+        $book = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($book) {
+            echo "Book still exists!";
+        } else {
+            echo "Book deletion confirmed.";
+        }
+
+
+
             ?>
         </div>
     </div>

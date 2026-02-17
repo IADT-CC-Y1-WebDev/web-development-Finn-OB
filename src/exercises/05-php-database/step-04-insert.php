@@ -56,6 +56,32 @@ catch (PDOException $e) {
             // 3. Check rowCount() === 1
             // 4. Get lastInsertId()
             // 5. Display success message with the new ID
+            $stmt = $db->prepare("
+            INSERT INTO books (title, author, publisher_id, year, description)
+            VALUES (:title, :author, :publisher_id, :year, :description)
+            ");
+
+            $success = $stmt->execute([
+                'title' => 'My Favourite Book',
+                'author' => 'Finn OBrien',
+                'publisher_id' => '1',
+                'year' => '2026',
+                'description' => 'Testing rowCount().'
+            ]);
+
+
+
+            if ($success && $stmt->rowCount() === 1){
+                echo "Successfully inserted 1 row<br>";
+            }else{
+                echo "Insert Failed";
+            }
+
+            $newId = $db->lastInsertId();
+            echo "Inserted book with ID: $newId";
+            
+
+            
             ?>
         </div>
     </div>
