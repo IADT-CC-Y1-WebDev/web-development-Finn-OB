@@ -3,9 +3,9 @@ require_once 'php/lib/config.php';
 require_once 'php/lib/utils.php';
 
 try {
-    $games = Book::findAll();
-    $genres = Genre::findAll();
-    $formats = Formats::findAll();
+    $books = Book::findAll();
+    $publishers = Publisher::findAll();
+    $formats = Format::findAll();
 } 
 catch (PDOException $e) {
     die("<p>PDO Exception: " . $e->getMessage() . "</p>");
@@ -33,11 +33,11 @@ catch (PDOException $e) {
                             <input type="text" id="title_filter" name="title_filter">
                         </div>
                         <div>
-                            <label for="genre_filter">Genre:</label>
-                            <select id="genre_filter" name="genre_filter">
-                                <option value="">All Genres</option>
-                                <?php foreach ($genres as $genre) { ?>
-                                    <option value="<?= h($genre->id) ?>"><?= h($genre->name) ?></option>
+                            <label for="publisher_filter">Publisher:</label>
+                            <select id="publisher_filter" name="publisher_filter">
+                                <option value="">All Publishers</option>
+                                <?php foreach ($publishers as $publisher) { ?>
+                                    <option value="<?= h($publisher->id) ?>"><?= h($publisher->name) ?></option>
                                 <?php } ?>
                             </select>
                         </div>
@@ -67,7 +67,7 @@ catch (PDOException $e) {
                         <div class="card">
                             <div class="top-content">
                                 <h2>Title: <?= h($book->title) ?></h2>
-                                <p>Release Year: <?= h($game->release_date) ?></p>
+                                <p>Year: <?= h($book->year) ?></p>
                             </div>
                             <div class="bottom-content">
                                 <img src="images/<?= h($book->cover_filename) ?>" alt="Cover for <?= h($book->title) ?>" />
