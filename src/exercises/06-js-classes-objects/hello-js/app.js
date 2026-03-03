@@ -22,12 +22,11 @@ let user = {
         firstName: "Jake",
         lastName: "Walsh",
         age: 28, 
-        } 
+        }
     ]
 };
 
-console.log(user.friends.lastname[1]);
 
-let donuts = ["Chocolate", "Jam", "Custard"];
 
-donuts.
+
+
