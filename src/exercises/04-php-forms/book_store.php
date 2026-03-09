@@ -134,7 +134,7 @@ try {
     // =========================================================================
     // TODO: On successful registration, set a success flash message and 
     // redirect back to the form
-    setFlashMessage('Success', 'Form Validated Successfully!')
+    setFlashMessage('Success', 'Form Validated Successfully!');
     redirect("success.php");
 }
 catch (Exception $e) {
@@ -158,6 +158,6 @@ catch (Exception $e) {
     // See: /examples/04-php-forms/step-08-flash-messages/
     // =========================================================================
     // TODO: On validation error, you set an error flash message
-    setFlashMessage('Error', 'Form Validated Failed!')
+    setFlashMessage('Error', 'Form Validated Failed!');
     redirect("book_create.php");
 }

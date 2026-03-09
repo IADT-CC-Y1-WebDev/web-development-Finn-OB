@@ -86,9 +86,11 @@ try {
     
     // Update the book instance
     $book->title = $data['title'];
-    $book->yesr = $data['year'];
+    $book->author = $data['author'];
+    $book->year = $data['year'];
     $book->publisher_id = $data['publisher_id'];
     $book->description = $data['description'];
+    $book->format = $data['formats'];
     if ($coverFilename) {
         $book->cover_filename = $coverFilename;
     }

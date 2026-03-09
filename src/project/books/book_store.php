@@ -51,18 +51,18 @@ try {
 
     // All validation passed - now process and save
     // Verify publisher exists
-    $publisher = Genre::findById($data['publisher_id']);
+    $publisher = Publisher::findById($data['publisher_id']);
     if (!$publisher) {
         throw new Exception('Selected publisher does not exist.');
     }
 
     // Process the uploaded image (validation already completed)
-    $uploader = new CoverUpload();
+    $uploader = new ImageUpload();
     $coverFilename = $uploader->process($_FILES['cover']);
 
-    if (!$imageFilename) {
-        throw new Exception('Failed to process and save the cover.');
-    }
+    if (!$coverFilename) {
+    throw new Exception('Failed to process and save the cover.');
+}
 
     // Create new book instance
     $book = new Book();

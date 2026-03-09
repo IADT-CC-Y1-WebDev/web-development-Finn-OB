@@ -73,7 +73,7 @@ catch (PDOException $e) {
                                 <img src="images/<?= h($book->cover_filename) ?>" alt="Cover for <?= h($book->title) ?>" />
                                 <div class="actions">
                                     <a href="book_view.php?id=<?= h($book->id) ?>">View</a>/ 
-                                    <a href="book.php?id=<?= h($book->id) ?>">Edit</a>/ 
+                                    <a href="book_edit.php?id=<?= h($book->id) ?>">Edit</a>/ 
                                     <a href="book_delete.php?id=<?= h($book->id) ?>">Delete</a>
                                 </div>
                             </div>

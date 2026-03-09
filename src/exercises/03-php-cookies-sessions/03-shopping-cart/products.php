@@ -26,12 +26,8 @@ new Product(4, 'Hat', 14.99, 'Baseball cap');
 // Exercise 2: Initialize the cart
 // -----------------------------------------------------------------------------
 // TODO: Write your code here
-<<<<<<< HEAD
 $cart = ShoppingCart::getInstance();
  
-=======
- $cart= shoppingcart::getInstance();
->>>>>>> 40f72ec51b0448a72e153cb599bd7780f29c4e0e
 // =============================================================================
 
 // =============================================================================
@@ -43,7 +39,6 @@ $cart = ShoppingCart::getInstance();
 // 4. Redirect back to products.php
 // -----------------------------------------------------------------------------
 // TODO: Write your code here
-<<<<<<< HEAD
 if (isset($_GET['add'])){
     $id = (int)$_GET['add'];
     $product = Product::findById($id);
@@ -52,27 +47,12 @@ if (isset($_GET['add'])){
     }
     header("Location: products.php");
     exit();
-=======
-if (isset($_GET['add'])) {
-    $id = (int) $_GET['add'];
-    $product = Product::findById($id);
-    if ($product !== null) {
-        $cart->add($product);
-    }
-    //redirect to products.php
-    header('Location: products.php');
-    exit;
->>>>>>> 40f72ec51b0448a72e153cb599bd7780f29c4e0e
 }
 // =============================================================================
 
 // Calculate cart count (this is provided for you)
 $cartCount = isset($cart) ? $cart->getCount() : 0;
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 40f72ec51b0448a72e153cb599bd7780f29c4e0e
 ?>
 <!DOCTYPE html>
 <html lang="en">

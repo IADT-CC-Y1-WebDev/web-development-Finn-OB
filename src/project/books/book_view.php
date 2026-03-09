@@ -14,7 +14,7 @@ try {
     }
 
     $publisher = Publisher::findById($book->publisher_id);
-    $formats = Format::findByBook($book->id);
+    $formats = Format::findByBookId($book->id);
 
     $formatNames = [];
     foreach ($formats as $format) {

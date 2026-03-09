@@ -7,17 +7,9 @@
 // =============================================================================
 
 // TODO Exercise 1: Start the session
-<<<<<<< HEAD
 if (session_status() === PHP_SESSION_NONE){
     session_start();
 }
-=======
-if (session_status() --- PHP_SESSION_NONE){
-    SESSION_START;
-}
-
-
->>>>>>> 40f72ec51b0448a72e153cb599bd7780f29c4e0e
 // Available users (this is provided for you)
 $users = ['alice', 'bob', 'charlie', 'dana'];
 
@@ -35,12 +27,7 @@ if (isset($_GET['login'])){
         if (isset($_GET['remember'])){
             setcookie('remembered_user', $username, time() + 60 * 60 * 24 * 30, '/');
         }
-<<<<<<< HEAD
             //redirect
-=======
- 
-        //redirect
->>>>>>> 40f72ec51b0448a72e153cb599bd7780f29c4e0e
         header('Location; 04-remember-me.php');
         exit;
     }
@@ -55,11 +42,7 @@ if (isset($_GET['login'])){
 if (isset($_GET['logout'])){
     unset ($_SESSION['logged_in_user']);
     if (isset($_GET['forget'])){
-<<<<<<< HEAD
         setcookie('remembered_user', '', time() - 3600, '/');
-=======
-        setcookie('remembered_user', '', time() - 3600, '/')
->>>>>>> 40f72ec51b0448a72e153cb599bd7780f29c4e0e
     }
  
     header('Location; 04-remember-me.php');
@@ -72,20 +55,12 @@ if (isset($_GET['logout'])){
 // 1. Delete the 'remembered_user' cookie
 // 2. Redirect back to this page
 if (isset($_GET['clear_cookie'])){
-<<<<<<< HEAD
     setcookie('remembered_user', '', time() - 3600, '/');
-=======
-    setcookie('remembered_user', '', time() - 3600, '/')
->>>>>>> 40f72ec51b0448a72e153cb599bd7780f29c4e0e
  
     header('Location; 04-remember-me.php');
     exit;
 }
-<<<<<<< HEAD
  
-=======
-
->>>>>>> 40f72ec51b0448a72e153cb599bd7780f29c4e0e
 
 // Determine current state (this is provided for you)
 $isLoggedIn = isset($_SESSION['logged_in_user']);
