@@ -18,30 +18,38 @@ clearBtn.addEventListener('click', (event) => {
 function applyFilters(){
     // console.log("Applying filters");
     let filters = getFilters();
-    let matches = [];
-    for (let i = 0; i !=cards.length; i++){
+    // let matches = [];
+    for (let i = 0; i !=cards.length; i++) {
         let card = cards[i];
-        matches[i] = cardMatches(card, filters);
+        let match = cardMatches(card, filters);
+        card.classList.toggle('hidden', !match);
+        
     }
-    console.log(matches);
 }
 
-function caerdMatches(crd, fltrs){
+function cardMatches(crd, fltrs){
     // console.log(crd.dataset.title, fltrs.titleFilters);
     let title = crd.dataset.title.toLowerCase();
-    return title.includes(fltrs.titleFilter);
+    let genre = crd.dataset.genre;
+    let platform = crd.dataset.platform;
+
+    let matchTitle    = fltrs.titleFilter      === "" || title.includes(fltrs.titleFilter);
+    let matchGenre    = fltrs.genreFilter      === "" || genre === fltrs.genreFilter;
+    let matchPlatform = fltrs.platformFilter   === "" || platform.includes(fltrs.platformFilter);
+
+    return matchTitle && matchGenre && matchPlatform;
 }
 
 function getFilters(){
     const titleEl = form.elements['title_filter'];
     const genreEl = form.elements['genre_filter'];
     const platformEl = form.elements['platform_filter'];
-    const sortEl = form.elements['sort_filter'];
+    const sortEl = form.elements['sort_by'];
 
     let titleFilter = (titleEl.value || '').trim().toLowerCase();
     let genreFilter = genreEl.value || '';
     let platformFilter = platformEl.value || '';
-    let sortFilter = sortEl.value || 'title_asc';
+    let sortBy = sortEl.value || 'title_asc';
 
     return{
         "titleFilter" : titleFilter,
