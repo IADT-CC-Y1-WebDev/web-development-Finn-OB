@@ -20,24 +20,31 @@ try {
     // Get form data
     $data = [
         'id' => $_POST['id'] ?? null,
-        'title' => $_POST['title'] ?? null,
-        'release_date' => $_POST['release_date'] ?? null,
-        'publisher_id' => $_POST['publisher_id'] ?? null,
-        'description' => $_POST['description'] ?? null,
-        'platform_ids' => $_POST['platform_ids'] ?? [],
-        'image' => $_FILES['image'] ?? null
+        "title" => $_POST["title"] ?? null,
+        "author" => $_POST["author"] ?? null,
+        "publisher_id" => $_POST["publisher_id"] ?? null,
+        "year" => $_POST["year"] ?? null,
+        "isbn" => $_POST["isbn"] ?? null,
+        "format_ids" => $_POST["format_ids"] ?? [],
+        "description" => $_POST["description"] ?? null,
+        "cover" => $_FILES["cover"] ?? null,
+ 
     ];
-
+ 
     // Define validation rules
-    $rules = [
+      $rules = [
         'id' => 'required|integer',
-        'title' => 'required|notempty|min:1|max:255',
-        'year' => 'required|notempty',
-        'publisher_id' => 'required|integer',
-        'description' => 'required|notempty|min:10|max:5000',
-        'format_ids' => 'required|array|min:1|max:10',
-        'cover' => 'file|image|mimes:jpg,jpeg,png|max_file_size:5242880' // optional -- no required rule
+        "title" => "required|noempty|min:5|max:255",
+        "author" => "required|noempty|min:5|max:255",
+        "publisher_id" => "required|noempty|integer",
+        "year" => "required|noempty|integer|minvalue:1900|maxvalue:2026",
+        "isbn" => "required|noempty|min:13|max:13",
+        "format_ids" => "required|noempty|array|min:1|max:4",
+        "description" => "required|noempty|min:10",
+        "cover" => "required|file|image|mimes:jpg,jpep,png|max_file_size:5242880",
+ 
     ];
+ 
 
     // Validate all data (including file)
     $validator = new Validator($data, $rules);

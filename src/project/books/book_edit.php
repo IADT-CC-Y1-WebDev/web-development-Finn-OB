@@ -69,12 +69,19 @@ catch (PDOException $e) {
                         </div>
                     </div>
                     <div class="input">
+                        <label class="special" for="author">Author:</label>
+                        <div>
+                            <input type="text" id="author" name="author" value="<?= old('author') ?>" required>
+                            <p><?= error('author') ?></p>
+                        </div>
+                    </div>
+                    <div class="input">
                         <label class="special" for="publisher_id">Publisher:</label>
                         <div>
                             <select id="publisher_id" name="publisher_id" required>
                                 <?php foreach ($publishers as $publisher) { ?>
                                     <option value="<?= h($publisher->id) ?>" <?= chosen('publisher_id', $publisher->id, $book->publisher_id) ? "selected" : "" ?>>
-                                        <?= h($publisher->Name) ?>
+                                        <?= h($publisher->name) ?>
                                     </option>
                                 <?php } ?>
                             </select>

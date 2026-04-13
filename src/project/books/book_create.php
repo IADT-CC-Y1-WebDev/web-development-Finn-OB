@@ -49,7 +49,7 @@ catch (PDOException $e) {
                     <div class="input">
                         <label class="special" for="year">Release Year:</label>
                         <div>
-                            <input type="date" id="year" name="year" value="<?= old('year') ?>" required>
+                            <input type="text" id="year" name="year" value="<?= old('year') ?>" required>
                             <p><?= error('year') ?></p>
                         </div>
                     </div>
