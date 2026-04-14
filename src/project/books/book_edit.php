@@ -71,7 +71,7 @@ catch (PDOException $e) {
                     <div class="input">
                         <label class="special" for="author">Author:</label>
                         <div>
-                            <input type="text" id="author" name="author" value="<?= old('author') ?>" required>
+                            <input type="text" id="author" name="author" value="<?= old('author', $book->author) ?>" required>
                             <p><?= error('author') ?></p>
                         </div>
                     </div>
@@ -91,7 +91,7 @@ catch (PDOException $e) {
                       <div class="input">
                         <label class="special" for="isbn">Isbn:</label>
                         <div>
-                            <textarea id="isbn" name="isbn" required><?= old('isbn', $book->isbn) ?></textarea>
+                            <input type="text" id="isbn" name="isbn" required value="<?= old('isbn', $book->isbn) ?>" />
                             <p><?= error('isbn') ?></p>
                         </div>
                     </div>

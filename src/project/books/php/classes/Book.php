@@ -181,7 +181,7 @@ class Book
  
         // Ensure one row affected
         if ($stmt->rowCount() !== 1) {
-            throw new Exception("Failed to save book.");
+            throw new Exception("unmodified");
         }
  
         // Set ID for new records

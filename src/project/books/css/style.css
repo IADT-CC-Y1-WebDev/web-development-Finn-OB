@@ -3,7 +3,7 @@ body {
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 1.5em;
-	background-color: #fff;
+	background-color: #90d7ec;
 }
 
 .cards {
@@ -13,10 +13,10 @@ body {
 }
 
 .card {
-	background-color: #f4f4f4;
+	background-color: #c4e7f1;
 	padding: 16px;
 	border-radius: 7px;
-	border: 1px solid #bcbcbc;
+	border: 1px solid #7db8ca;
 	width: 285px;
 	display: flex;
 	flex-direction: column;
@@ -44,7 +44,7 @@ body {
 
 .card .actions a {
 	font-weight: 600;
-	color: #b0acfa;
+	color: #9892fa;
 	font-size: 13px;
 	text-transform: uppercase;
 }
@@ -62,7 +62,7 @@ body {
 }
 
 .filters {
-	background-color: #f2f2f2;
+	background-color: #c4e7f1;
 	padding: 10px;
 	display: flex;
 	justify-content: flex-end;
@@ -177,7 +177,7 @@ form {
 	gap: 20px;
 }
 
-.input p {
+.input span {
 	margin-top: 3px;
 	color: red;
 	font-size: 14px;
@@ -190,3 +190,5 @@ form {
 	color: #252525;
 	font-weight: 900;
 }
+
+
