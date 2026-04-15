@@ -59,6 +59,7 @@ catch (PDOException $e) {
                         <div>
                             <input type="text" id="title" name="title" value="<?= old('title', $book->title) ?>" required>
                             <p><?= error('title') ?></p>
+                            <span id="title_error" class="error"></span>
                         </div>
                     </div>
                     <div class="input">
@@ -66,6 +67,7 @@ catch (PDOException $e) {
                         <div>
                             <input type="number" id="year" name="year" value="<?= old('year', $book->year) ?>" required>
                             <p><?= error('year') ?></p>
+                            <span id="year_error" class="error"></span>
                         </div>
                     </div>
                     <div class="input">
@@ -73,6 +75,7 @@ catch (PDOException $e) {
                         <div>
                             <input type="text" id="author" name="author" value="<?= old('author', $book->author) ?>" required>
                             <p><?= error('author') ?></p>
+                            <span id="author_error" class="error"></span>
                         </div>
                     </div>
                     <div class="input">
@@ -86,6 +89,7 @@ catch (PDOException $e) {
                                 <?php } ?>
                             </select>
                             <p><?= error('publisher_id') ?></p>
+                            <span id="publisher_error" class="error"></span>
                         </div>
                     </div>
                       <div class="input">
@@ -93,6 +97,7 @@ catch (PDOException $e) {
                         <div>
                             <input type="text" id="isbn" name="isbn" required value="<?= old('isbn', $book->isbn) ?>" />
                             <p><?= error('isbn') ?></p>
+                            <span id="isbn_error" class="error"></span>
                         </div>
                     </div>
                     <div class="input">
@@ -100,6 +105,7 @@ catch (PDOException $e) {
                         <div>
                             <textarea id="description" name="description" required><?= old('description', $book->description) ?></textarea>
                             <p><?= error('description') ?></p>
+                            <span id="description_error" class="error"></span>
                         </div>
                     </div>
                     <div class="input">
@@ -118,6 +124,7 @@ catch (PDOException $e) {
                             <?php } ?>
                         </div>
                         <p><?= error('format_ids') ?></p>
+                        <span id="format_error" class="error"></span>
                     </div>
                     <div><img src="images/<?= $book->cover_filename ?>" /></div>
                     <div class="input">
@@ -125,6 +132,7 @@ catch (PDOException $e) {
                         <div>
                             <input type="file" id="cover" name="cover" accept="image/*">
                             <p><?= error('cover') ?></p>
+                            <span id="image_error" class="error"></span>
                         </div>
                     </div>
                     <div class="input">
@@ -134,6 +142,8 @@ catch (PDOException $e) {
                 </form>
             </div>
         </div>
+
+        <script src="Javascript/FormValidation.js"></script>
     </body>
 </html>
 <?php
