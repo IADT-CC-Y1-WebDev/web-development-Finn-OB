@@ -20,6 +20,7 @@ try {
     // Get form data
     $data = [
         'title' => $_POST['title'] ?? null,
+        'author' => $_POST['author'] ?? null,
         'year' => $_POST['year'] ?? null,
         'publisher_id' => $_POST['publisher_id'] ?? null,
         'description' => $_POST['description'] ?? null,
@@ -30,6 +31,7 @@ try {
     // Define validation rules
     $rules = [
         'title' => 'required|notempty|min:1|max:255',
+        'author' => 'required|notempty|min:1|max:255',
         'year' => 'required|notempty',
         'publisher_id' => 'required|integer',
         'description' => 'required|notempty|min:10|max:5000',
@@ -67,6 +69,7 @@ try {
     // Create new book instance
     $book = new Book();
     $book->title = $data['title'];
+    $book->author = $data['author']; 
     $book->year = $data['year'];
     $book->publisher_id = $data['publisher_id'];
     $book->description = $data['description'];

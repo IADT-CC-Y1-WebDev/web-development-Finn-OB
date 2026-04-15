@@ -134,6 +134,6 @@ function onSubmitForm(evt) {
     showErrorSummaryTop();
     
     if(Object.keys(errors).length === 0){
-        bookform.submit();
+        bookForm.submit();
     }
 }

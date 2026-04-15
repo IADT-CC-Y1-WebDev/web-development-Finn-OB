@@ -31,6 +31,7 @@ catch (PDOException $e) {
             </div>
             <div class="width-12">
                 <form id="book_form" action="book_store.php" method="POST" enctype="multipart/form-data" novalidate>
+                    <div id="error_summary_top" class="error-summary" style="display:none" role="alert"></div>
                     <div class="input">
                         <label class="special" for="title">Title:</label>
                         <div>
@@ -110,7 +111,7 @@ catch (PDOException $e) {
                     <div class="input">
                         <label class="special" for="cover">Image (required):</label>
                         <div>
-                            <input type="file" id="cover" name="cover" accept="cover/*" required>
+                            <input type="file" id="cover" name="cover" accept="image/*" required>
                             <p><?= error('cover') ?></p>
                             <span id="cover_error" class="error"></span>
                         </div>
