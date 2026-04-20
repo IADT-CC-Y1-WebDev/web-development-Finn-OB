@@ -38,6 +38,9 @@
         <?php
         // TODO: Write your solution here
         // require_once __DIR__ . '/classes/Undergrad.php';
+        require_once __DIR__ . '/classes/Undergrad.php';
+        $undergrad = new Undergrad("Alice", "S001", "Computer Science", 2);
+        echo $undergrad->getName();
         ?>
     </div>
 
@@ -59,6 +62,12 @@
         <?php
         // TODO: Write your solution here
         // require_once __DIR__ . '/classes/Undergrad.php';
+        require_once __DIR__ . '/classes/Undergrad.php';
+        $undergrad = new Undergrad("Alice", "S001", "Computer Science", 2);
+        echo "Name: " . $undergrad->getName() . "<br>";
+        echo "Number: " . $undergrad->getNumber() . "<br>";
+        echo "Course: " . $undergrad->getCourse() . "<br>";
+        echo "Year: " . $undergrad->getYear() . "<br>";
         ?>
     </div>
 
@@ -76,6 +85,19 @@
         <?php
         // TODO: Write your solution here
         // require_once __DIR__ . '/classes/Undergrad.php';
+        require_once __DIR__ . '/classes/Undergrad.php';
+        $students = [
+            new Undergrad("Alice", "S001", "Computer Science", 2),
+            new Undergrad("Bob", "S002", "Mathematics", 3),
+            new Undergrad("Charlie", "S003", "Physics", 1)
+        ];
+        foreach ($students as $student) {
+            echo "Name: " . $student->getName() . "<br>";
+            echo "Number: " . $student->getNumber() . "<br>";
+            echo "Course: " . $student->getCourse() . "<br>";
+            echo "Year: " . $student->getYear() . "<br>";
+            echo "<br>";
+        }
         ?>
     </div>
 

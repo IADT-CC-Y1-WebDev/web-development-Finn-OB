@@ -48,10 +48,15 @@
     <div class="output">
         <?php
         // TODO: Write your solution here
-        function calculateRectangleArea($width, $height){
-            return ($width * $height);
+        function calculateRectangleArea($width, $height = null) {
+            if ($height === null) {
+                $height = $width;
+            }
+            return $width * $height;
         }
-        echo calculateRectangleArea (5, 10);
+
+        echo calculateRectangleArea(5, 10) . "<br>"; 
+        echo calculateRectangleArea(5) . "<br>";  
         
         
         ?>
@@ -70,16 +75,16 @@
     <div class="output">
         <?php
         // TODO: Write your solution here
-        function checkEvenOdd($number){
-            if ($number % 2 === 0){
-                print_r("Even");
-            } 
-            else{
-                print_r("Odd");
+        function checkEvenOdd($number) {
+            if ($number % 2 === 0) {
+                return "Even";
+            } else {
+                return "Odd";
             }
-            echo checkEvenOdd(10);
-            
         }
+
+        echo checkEvenOdd(10) . "<br>"; 
+        echo checkEvenOdd(7) . "<br>";
         ?>
     </div>
 
@@ -96,7 +101,18 @@
     <div class="output">
         <?php
         // TODO: Write your solution here
-        function getArrayStats()
+        function getArrayStats($numbers) {
+            return [
+                min($numbers),
+                max($numbers),
+                array_sum($numbers) / count($numbers)
+            ];
+        }
+
+        [$min, $max, $avg] = getArrayStats([3, 7, 1, 9, 4]);
+        echo "Min: $min <br>";
+        echo "Max: $max <br>";
+        echo "Average: $avg <br>";
         ?>
     </div>
 

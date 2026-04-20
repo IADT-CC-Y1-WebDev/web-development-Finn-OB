@@ -13,7 +13,7 @@ body {
 }
 
 .card {
-	background-color: #c4e7f1;
+	background-color: rgb(139, 233, 250);
 	padding: 16px;
 	border-radius: 7px;
 	border: 1px solid #7db8ca;
@@ -43,6 +43,7 @@ body {
 .card .actions {
 	display: flex;
 	gap: 8px;
+	color:#9892fa ;
 	justify-content: flex-end;
 }
 

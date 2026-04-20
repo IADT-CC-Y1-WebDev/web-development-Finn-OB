@@ -47,9 +47,11 @@
     <div class="output">
         <?php
         // TODO: Write your solution here
-        $Name = $_GET['name'] ?? NULL;
-        if($Name){
-            print_r("Hello ". ucfirst($_GET['name']));
+        $name = $_GET['name'] ?? null;
+        if ($name) {
+            echo "Hello, " . ucfirst($name) . "!";
+        } else {
+            echo "Hello, Guest!";
         }
         ?>
     </div>
@@ -68,6 +70,18 @@
     <div class="output">
         <?php
         // TODO: Write your solution here
+        $product = $_GET['product'] ?? null;
+        $quantity = $_GET['quantity'] ?? null;
+
+        if ($product && $quantity) {
+            echo "You ordered $quantity $product(s)";
+        } elseif (!$product && !$quantity) {
+            echo "Error: product and quantity are missing";
+        } elseif (!$product) {
+            echo "Error: product is missing";
+        } else {
+            echo "Error: quantity is missing";
+        }
         ?>
     </div>
 

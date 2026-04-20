@@ -1,21 +1,32 @@
 <?php
 
 class Student {
-    private $name;
-    private $number;
+    protected string $name;
+    protected string $number;
 
-    public function __construct($Name, $Number) {
-        $this->name = $Name;
-        $this->number = $Number;
+    public function __construct(string $name, string $number) {
+        if (empty($number)) {
+            throw new Exception("Student number cannot be empty");
+        }
+        $this->name = $name;
+        $this->number = $number;
+        echo "Creating student: $name <br>";
     }
-    public function getName(){
+
+    public function __toString(): string {
+        return "Student: $this->name ($this->number)";
+    }
+
+    public function __destruct() {
+        echo "Student $this->name has left the system <br>";
+    }
+
+    public function getName(): string {
         return $this->name;
     }
-    public function getNumber(){
+
+    public function getNumber(): string {
         return $this->number;
     }
-
-    public function getName() { return $this->number; }
-    public function getNumber() { return $this->name; }
 }
 

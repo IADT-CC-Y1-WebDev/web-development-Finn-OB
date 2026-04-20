@@ -47,11 +47,11 @@ function sortCards(cards, sortByFilter) {
 
 function cardMatches(card, filters) {
     let title = card.dataset.title.toLowerCase();
-    let publisher = card.dataset.publisher.trim();
     let formatIds = card.dataset.format.split(" ").map(id => id.trim()).filter(id => id !== "");
  
     let matchTitle = filters.titleFilter === "" || title.includes(filters.titleFilter);
-    let matchPublisher = filters.publisherFilter === "" || publisher === filters.publisherFilter.trim();
+    let publisher = card.dataset.publisher.trim().toLowerCase();
+    let matchPublisher = filters.publisherFilter === "" || publisher === filters.publisherFilter.trim().toLowerCase();
     let matchFormat = filters.formatFilter === "" || formatIds.includes(filters.formatFilter);
  
     return matchTitle && matchPublisher && matchFormat;
