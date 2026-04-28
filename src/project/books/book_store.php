@@ -32,7 +32,7 @@ try {
     $rules = [
         'title' => 'required|notempty|min:1|max:255',
         'author' => 'required|notempty|min:1|max:255',
-        'year' => 'required|notempty',
+        'year' => 'required|integer|minvalue:1800',
         'publisher_id' => 'required|integer',
         'description' => 'required|notempty|min:10|max:5000',
         'format_ids' => 'required|array|min:1|max:10',

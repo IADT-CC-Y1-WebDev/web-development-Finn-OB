@@ -88,23 +88,23 @@ function onSubmitForm(evt) {
         addError('title', 'Title must not exceed 255 characters.');
     }
 
-
     if(!isRequired(authorInput.value)){
         addError('author', 'Author is required');
     }
-
 
     if(!isRequired(publisherInput.value)){
         addError('publisher', 'Publisher is required');
     }
 
-    if(!isRequired(yearInput.value)){
+   if(!isRequired(yearInput.value)){
         addError('year', 'Year is required');
+    } else if(parseInt(yearInput.value) < 1800){
+        addError('year', 'Year must be 1800 or later');
     }
+
     if(!isRequired(isbnInput.value)){
         addError('isbn', 'ISBN is required');
     }
-
 
     if(!isRequired(descriptionInput.value)){
         addError('description', 'Description is required');
@@ -112,7 +112,6 @@ function onSubmitForm(evt) {
         addError('description', `Description must be at least ${descMin} characters`);
     }
 
-    
     let formatSelected = false;
     for(let i = 0; i < formatInput.length; i++){
         if(formatInput[i].checked){
